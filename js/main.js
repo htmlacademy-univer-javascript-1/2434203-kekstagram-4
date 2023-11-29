@@ -1,2 +1,3 @@
-import { getPhotoArray } from './utils.js';
-console.log(getPhotoArray())
+import { createMiniPhotos } from './miniPhotos.js';
+createMiniPhotos();
+
