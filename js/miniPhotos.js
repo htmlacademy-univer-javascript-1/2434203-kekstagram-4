@@ -15,6 +15,7 @@ const createMiniPhotos = () => {
     picture.querySelector('.picture__comments').textContent = comments.length;
 
     picFragment.append(picture);
+
   });
   picContainer.append(picFragment);
 }
