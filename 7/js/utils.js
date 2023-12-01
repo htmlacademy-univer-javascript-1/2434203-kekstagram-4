@@ -22,6 +22,7 @@ const photoExample = () =>({
    comments: Array.from({length:getRandomInteger(0 , COMMENTS_MAX)}, commentExample)
 });
 
+
 export const getPhotosArray = () => {
    const photo = Array.from({length: COUNT_PHOTO}, photoExample);
    return photo;
