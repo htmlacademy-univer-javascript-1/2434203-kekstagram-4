@@ -17,4 +17,5 @@ const createMiniPhotos = (picTemp, picContainer) => {
   });
   picContainer.append(picFragment);
 }
+
 export {createMiniPhotos};
