@@ -1,5 +1,7 @@
-import { createMiniPhotos } from "./miniPhotos.js";
-const picTemp = document.querySelector('#picture').content.querySelector('.picture');
-const picContainer = document.querySelector('.pictures');
+import { createMiniPhotos } from "./mini-photos.js";
+import { getPhotosArray } from './utils.js';
+import { photosCount } from './data.js';
 
-createMiniPhotos(picTemp, picContainer)
+const pictureTemplate = document.querySelector('#picture').content.querySelector('.picture');
+const photosCollection = getPhotosArray(photosCount);
+createMiniPhotos(pictureTemplate, photosCollection)

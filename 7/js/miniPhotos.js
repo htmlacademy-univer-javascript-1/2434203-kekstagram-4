@@ -1,13 +1,10 @@
-import { getPhotosArray } from './utils.js';
-import { photosCount } from './data.js';
+const picContainer = document.querySelector('.pictures');
 
-const createMiniPhotos = (picTemp, picContainer) => {
-  const photosCollection = getPhotosArray(photosCount);
+const createMiniPhotos = (pictureTemplate, photosCollection) => {
   const picFragment = document.createDocumentFragment();
 
   photosCollection.forEach(({url, description, likes, comments}) => {
-    const picture = picTemp.cloneNode(true);
-
+    const picture = pictureTemplate.cloneNode(true);
     picture.querySelector('img').src = url;
     picture.querySelector('img').alt = description;
     picture.querySelector('.picture__likes').textContent = likes;
@@ -17,5 +14,4 @@ const createMiniPhotos = (picTemp, picContainer) => {
   });
   picContainer.append(picFragment);
 }
-
 export {createMiniPhotos};
