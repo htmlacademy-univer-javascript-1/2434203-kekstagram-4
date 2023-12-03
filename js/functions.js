@@ -1,6 +1,6 @@
 const polyndromCheck = (string) => (string.toLowerCase().replaceAll(' ', '') === string.toLowerCase().replaceAll(' ', '').reverse())
 
-const lengthCheck = (string, length) => string.length >= length;
+const lengthCheck = (string, length) => {return string.length >= length;};
 
 function checkWorkingTime(dayBegin, dayEnd, meetingBegin, duration) {
   const dayBeginTime = dayBegin.split(':');
@@ -11,5 +11,3 @@ function checkWorkingTime(dayBegin, dayEnd, meetingBegin, duration) {
   const meetingBeginMinutes = (+meetingBeginTime[0]) * 60 + (+meetingBeginTime[1]);
   return dayBeginMinutes <= meetingBeginMinutes && meetingBeginMinutes + duration <= dayEndMinutes;
 };
-
-

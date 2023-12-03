@@ -1,4 +1,4 @@
-import { COMMENTS_MAX, NAMES, MESSAGES, DESCRIPTIONS, COUNT_PHOTO, Likes } from './data.js';
+import { COMMENTS_MAX, NAMES, MESSAGES, DESCRIPTIONS, PHOTOS_COUNT, Likes } from './data.js';
 
 const getRandomInteger = (a, b) => {
   const lower = Math.ceil(Math.min(a, b));
@@ -14,7 +14,7 @@ const commentExample = () => ({
   name: NAMES[getRandomInteger(0, NAMES.length - 1)]
 });
 
-const photoExample = () =>({
+const getPhotoExample = () =>({
    id: getRandomInteger(1, COUNT_PHOTO),
    url: `photos/${getRandomInteger(1, COUNT_PHOTO)}.jpg`,
    description: DESCRIPTIONS[getRandomInteger(0, DESCRIPTIONS.length - 1)],
@@ -22,8 +22,4 @@ const photoExample = () =>({
    comments: Array.from({length:getRandomInteger(0 , COMMENTS_MAX)}, commentExample)
 });
 
-
-export const getPhotosArray = () => {
-   const photo = Array.from({length: COUNT_PHOTO}, photoExample);
-   return photo;
-};
+export const getPhotosArray = () => Array.from({length: COUNT_PHOTO}, getPhotoExample);

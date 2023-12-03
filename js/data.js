@@ -1,4 +1,5 @@
-export const photosCount = 25;
+const PHOTOS_COUNT = 25;
+const COMMENTS_MAX = 30;
 
 const DESCRIPTIONS = [
   'Просто бомба',
@@ -11,7 +12,7 @@ const DESCRIPTIONS = [
   'Берег и облака',
   'Одиночество...',
   'Вот это встреча'
-];
+  ];
 
 const NAMES = [
   'Виктор',
@@ -21,7 +22,7 @@ const NAMES = [
   'Катерина',
   'Максим',
   'Коля'
-];
+  ];
 
 const MESSAGES = [
   'Всё отлично!',
@@ -30,14 +31,11 @@ const MESSAGES = [
   'Моя бабушка случайно чихнула с фотоаппаратом в руках и у неё получилась фотография лучше.',
   'Я поскользнулся на банановой кожуре и уронил фотоаппарат на кота и у меня получилась фотография лучше.',
   'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!'
-];
+  ];
 
-const COUNT_PHOTO = 25;
-const COMMENTS_MAX = 30;
-
-const Likes = {
+  const Likes = {
   MIN:15,
   MAX:200
-};
+  };
 
-export {DESCRIPTIONS, MESSAGES, NAMES, COUNT_PHOTO, COMMENTS_MAX, Likes};
+export {DESCRIPTIONS, MESSAGES, NAMES, PHOTOS_COUNT, COMMENTS_MAX, Likes}
