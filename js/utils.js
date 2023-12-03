@@ -8,18 +8,18 @@ const getRandomInteger = (a, b) => {
 };
 
 const commentExample = () => ({
-  id: getRandomInteger(0, COUNT_PHOTO),
+  id: getRandomInteger(0, PHOTOS_COUNT),
   avatar: `img/avatar-${getRandomInteger(1, 6)}.svg`,
   message: MESSAGES[getRandomInteger(0, MESSAGES.length -1)],
   name: NAMES[getRandomInteger(0, NAMES.length - 1)]
 });
 
-const getPhotoExample = () =>({
-   id: getRandomInteger(1, COUNT_PHOTO),
-   url: `photos/${getRandomInteger(1, COUNT_PHOTO)}.jpg`,
+const getPhoto = () =>({
+   id: getRandomInteger(1, PHOTOS_COUNT),
+   url: `photos/${getRandomInteger(1, PHOTOS_COUNT)}.jpg`,
    description: DESCRIPTIONS[getRandomInteger(0, DESCRIPTIONS.length - 1)],
    likes: getRandomInteger(Likes.MIN, Likes.MAX),
    comments: Array.from({length:getRandomInteger(0 , COMMENTS_MAX)}, commentExample)
 });
 
-export const getPhotosArray = () => Array.from({length: COUNT_PHOTO}, getPhotoExample);
+export const getPhotosArray = () => Array.from({length: PHOTOS_COUNT}, getPhoto);

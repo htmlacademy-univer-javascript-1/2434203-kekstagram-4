@@ -1,9 +1,10 @@
 const picContainer = document.querySelector('.pictures');
 
-const createMiniPhotos = (pictureTemplate, photosCollection) => {
+const renderMiniPhotos = (photosCollection) => {
   const picFragment = document.createDocumentFragment();
 
   photosCollection.forEach(({url, description, likes, comments}) => {
+    const pictureTemplate = document.querySelector('#picture').content.querySelector('.picture');
     const picture = pictureTemplate.cloneNode(true);
     picture.querySelector('img').src = url;
     picture.querySelector('img').alt = description;
@@ -14,4 +15,4 @@ const createMiniPhotos = (pictureTemplate, photosCollection) => {
   });
   picContainer.append(picFragment);
 }
-export {createMiniPhotos};
+export {renderMiniPhotos};
