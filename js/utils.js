@@ -7,7 +7,7 @@ const getRandomInteger = (a, b) => {
   return Math.floor(result);
 };
 
-const commentExample = () => ({
+const getComment = () => ({
   id: getRandomInteger(0, PHOTOS_COUNT),
   avatar: `img/avatar-${getRandomInteger(1, 6)}.svg`,
   message: MESSAGES[getRandomInteger(0, MESSAGES.length -1)],
@@ -19,7 +19,7 @@ const getPhoto = () =>({
    url: `photos/${getRandomInteger(1, PHOTOS_COUNT)}.jpg`,
    description: DESCRIPTIONS[getRandomInteger(0, DESCRIPTIONS.length - 1)],
    likes: getRandomInteger(Likes.MIN, Likes.MAX),
-   comments: Array.from({length:getRandomInteger(0 , COMMENTS_MAX)}, commentExample)
+   comments: Array.from({length:getRandomInteger(0 , COMMENTS_MAX)}, getComment)
 });
 
 export const getPhotosArray = () => Array.from({length: PHOTOS_COUNT}, getPhoto);

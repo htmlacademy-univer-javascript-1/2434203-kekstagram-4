@@ -10,7 +10,6 @@ const renderMiniPhotos = (photosCollection) => {
     picture.querySelector('img').alt = description;
     picture.querySelector('.picture__likes').textContent = likes;
     picture.querySelector('.picture__comments').textContent = comments.length;
-
     picFragment.append(picture);
   });
   picContainer.append(picFragment);
