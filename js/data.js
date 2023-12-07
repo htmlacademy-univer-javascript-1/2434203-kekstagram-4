@@ -1,3 +1,6 @@
+const PHOTOS_COUNT = 25;
+const COMMENTS_MAX = 30;
+
 const DESCRIPTIONS = [
   'Просто бомба',
   'Пляж, коктейль, солнце',
@@ -30,12 +33,10 @@ const MESSAGES = [
   'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!'
   ];
 
-const COUNT_PHOTO = 25;
-const COMMENTS_MAX = 30;
-
   const Likes = {
   MIN:15,
   MAX:200
   };
 
-export {DESCRIPTIONS, MESSAGES, NAMES, COUNT_PHOTO, COMMENTS_MAX, Likes}
+
+export {DESCRIPTIONS, MESSAGES, NAMES, PHOTOS_COUNT, COMMENTS_MAX, Likes}
