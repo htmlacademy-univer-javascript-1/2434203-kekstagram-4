@@ -23,3 +23,14 @@ const getPhoto = () =>({
 });
 
 export const getPhotosArray = () => Array.from({length: PHOTOS_COUNT}, getPhoto);
+
+export const loadAllComments = (comments, commentsFragment, commentTemplate) =>{
+  comments.forEach((element) => {
+    document.querySelector('.current__comments-count').textContent = comments.length;
+    const comment = commentTemplate.cloneNode(true);
+    comment.querySelector('.social__picture').src = element.avatar;
+    comment.querySelector('.social__picture').alt = element.name;
+    comment.querySelector('.social__text').textContent = element.message;
+    commentsFragment.append(comment);
+  });
+}
