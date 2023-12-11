@@ -1,3 +1,5 @@
+import { openViewPopup } from './view-popup.js';
+
 const picContainer = document.querySelector('.pictures');
 
 const renderMiniPhotos = (photosCollection) => {
@@ -10,6 +12,9 @@ const renderMiniPhotos = (photosCollection) => {
     picture.querySelector('img').alt = description;
     picture.querySelector('.picture__likes').textContent = likes;
     picture.querySelector('.picture__comments').textContent = comments.length;
+    picture.addEventListener('click', () => {
+      openViewPopup(url, description, likes, comments);
+    });
     picFragment.append(picture);
   });
   picContainer.append(picFragment);
