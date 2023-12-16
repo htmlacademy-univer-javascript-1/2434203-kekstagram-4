@@ -30,7 +30,7 @@ const loadAllComments = (comments, commentsContainer) =>{
 const renderMoreComments = () => {
   let currentComment = document.querySelector('.social__comment.hidden');
   let i = 0;
-  for (let j = i; i < j + COMMENT_STEP; i++) {
+  for (; i < COMMENT_STEP; i++) {
     if (!currentComment) {
       commentsLoader.classList.add('hidden');
       break;
