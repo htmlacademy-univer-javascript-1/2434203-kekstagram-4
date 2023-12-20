@@ -23,3 +23,9 @@ const getPhoto = () =>({
 });
 
 export const getPhotosArray = () => Array.from({length: PHOTOS_COUNT}, getPhoto);
+
+export const onDocumentKeydown = (evt, closeFunction) => {
+  if (evt.key === 'Escape') {
+    closeFunction(evt);
+  }
+};
