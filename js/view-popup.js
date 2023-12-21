@@ -1,17 +1,11 @@
 import { COMMENT_STEP } from './data.js';
+import { onDocumentKeydown } from './utils.js';
 
 const commentTemplate = document.querySelector('.social__comment');
 const commentsLoader = document.querySelector('.comments-loader');
 const activeComments = document.querySelector('.current__comments-count');
 const closeViewPopupBtn = document.querySelector('.big-picture__cancel');
 const moreCommentsBtn = document.querySelector('.social__comments-loader');
-
-const onDocumentKeydown = (evt) => {
-  if (evt.key === 'Escape') {
-    evt.preventDefault();
-    closeViewPopup();
-  }
-};
 
 const loadAllComments = (comments, commentsContainer) =>{
   const commentsFragment = document.createDocumentFragment();
@@ -52,7 +46,7 @@ const onLoadCommentsBtn = () => renderMoreComments();
 function closeViewPopup() {
   document.body.classList.remove('modal-open');
   document.querySelector('.big-picture').classList.add('hidden');
-  document.removeEventListener('keydown', onDocumentKeydown);
+  document.removeEventListener('keydown', onDocumentKeydown(closePicture));
   closeViewPopupBtn.removeEventListener('click', onCloseBtnClick);
 }
 
@@ -72,7 +66,7 @@ export const openViewPopup = (url, description, likes, comments) =>{
   commentsLoader.classList.remove('hidden');
   renderMoreComments();
 
-  document.addEventListener('keydown', onDocumentKeydown);
+  document.addEventListener('keydown', onDocumentKeydown(closePicture));
   moreCommentsBtn.addEventListener('click', onLoadCommentsBtn);
   closeViewPopupBtn.addEventListener('click', onCloseBtnClick);
 };

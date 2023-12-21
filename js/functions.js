@@ -10,5 +10,4 @@ function checkWorkingTime(dayBegin, dayEnd, meetingBegin, duration) {
   const dayEndMinutes = (+dayEndTime[0]) * 60 + (+dayEndTime[1]);
   const meetingBeginMinutes = (+meetingBeginTime[0]) * 60 + (+meetingBeginTime[1]);
   return dayBeginMinutes <= meetingBeginMinutes && meetingBeginMinutes + duration <= dayEndMinutes;
-
 };

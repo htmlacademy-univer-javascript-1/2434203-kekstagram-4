@@ -19,4 +19,5 @@ const renderMiniPhotos = (photosCollection) => {
   });
   picContainer.append(picFragment);
 }
+
 export {renderMiniPhotos};
