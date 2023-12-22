@@ -46,7 +46,7 @@ const onLoadCommentsBtn = () => renderMoreComments();
 function closeViewPopup() {
   document.body.classList.remove('modal-open');
   document.querySelector('.big-picture').classList.add('hidden');
-  document.removeEventListener('keydown', onDocumentKeydown(closePicture));
+  document.removeEventListener('keydown', onDocumentKeydown(closeViewPopup));
   closeViewPopupBtn.removeEventListener('click', onCloseBtnClick);
 }
 
@@ -66,7 +66,7 @@ export const openViewPopup = (url, description, likes, comments) =>{
   commentsLoader.classList.remove('hidden');
   renderMoreComments();
 
-  document.addEventListener('keydown', onDocumentKeydown(closePicture));
+  document.addEventListener('keydown', onDocumentKeydown(closeViewPopup));
   moreCommentsBtn.addEventListener('click', onLoadCommentsBtn);
   closeViewPopupBtn.addEventListener('click', onCloseBtnClick);
 };

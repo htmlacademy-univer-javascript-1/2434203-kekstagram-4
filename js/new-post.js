@@ -1,5 +1,7 @@
-import { onDocumentKeydown } from '../../Shander/js/utils.js';
-import { HASHTAGS_COUNT, DESCRIPTION_LENGTH } from '../../Shander/js/data.js';
+import { onDocumentKeydown } from './utils.js';
+import { HASHTAGS_COUNT, DESCRIPTION_LENGTH } from './data.js';
+import {resetEffect, initEffect} from './effects.js';
+import {resetScale} from './scale.js';
 const uploadForm = document.querySelector('.img-upload__form');
 const uploadInput = uploadForm.querySelector('.img-upload__input');
 const imageOverlay = uploadForm.querySelector('.img-upload__overlay.hidden');
@@ -79,6 +81,8 @@ function closeOverlay(){
   closeButton.removeEventListener('click', closeOverlay);
   document.removeEventListener('keydown', onDocumentKeydown(closeOverlay));
   uploadInput.addEventListener('click', openOverlay);
+  resetEffect();
+  resetScale();
   uploadInput.value = null;
   hashtagsField.textContent = '';
   descriptionField.textContent = '';
@@ -90,6 +94,7 @@ function openOverlay() {
   closeButton.addEventListener('click', closeOverlay);
   document.addEventListener('keydown', onDocumentKeydown(closeOverlay));
   uploadInput.removeEventListener('click', openOverlay);
+  initEffect();
 }
 
 uploadInput.addEventListener('change', openOverlay);
